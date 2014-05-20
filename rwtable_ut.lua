@@ -39,13 +39,13 @@ end
 
 function test_base()
     local r = rwtable.read_obj(key)
-    --local w1 = rwtable.write_obj(key)
+    local w1 = rwtable.write_obj(key)
     assert_equal(1111, r.b.c)
-    --assert_false(rwtable.is_dirty(key, r))
-    --w1[5] = 2
-    --assert_false(rwtable.is_dirty(key, r))
-    --rwtable.commit(key, w1)
-    --assert_false(rwtable.is_dirty(key, r))
+    assert_false(rwtable.is_dirty(key, r))
+    w1[5] = 2
+    assert_false(rwtable.is_dirty(key, r))
+    rwtable.commit(key, w1)
+    assert_false(rwtable.is_dirty(key, r))
     local w2 = rwtable.write_obj(key)
     w2.b.c = 2222
     assert_false(rwtable.is_dirty(key, r))

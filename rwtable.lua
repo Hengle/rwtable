@@ -256,8 +256,8 @@ end
 
 local M = {
     put = put,
-    read_obj = read,
-    write_obj = write,
+    read_obj = read_obj,
+    write_obj = write_obj,
     commit = commit,
     is_dirty = is_dirty,
     remove = remove,
