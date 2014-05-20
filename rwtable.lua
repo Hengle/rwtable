@@ -97,6 +97,8 @@ write_obj_mt = {
                 rawset(t, v, nv)
                 v = nv
             end
+        else
+            error('this object writeonly!')
         end
         return v
     end,
